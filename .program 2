@@ -1,0 +1,28 @@
+import java.util.Scanner
+public class program2 {
+	
+	public static double[][] createarray(){
+		Scanner input=new Scanner(System.in);
+		double[][] data=new double[4][3];
+		for (int col=0;col<4;col++)
+		  for(int row=0;col<3;row++)
+		    data[row][col]=input.nextDouble();
+		input.close();  
+		return data; 
+	}
+	\\public static void printResult(double[][] m, double[] sum){
+	
+	}
+	public static double sumColumn(double[] s,int columnIndex){
+	  double sum=0
+	  
+	  return sum;
+	}
+	public static void main(String[] args){
+		double[][] matrix=createarray();
+		double[] colSum=new double[4]
+		for (int col=0;col<4;col++)
+		  colSum[col]=sumColumn(matrix,col);
+		printResult(matrix,colSum)
+	}
+}
