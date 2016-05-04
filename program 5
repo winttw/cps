@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class wintt_Program5 {
 	public static void main(String[] args){
 		Animals a=new Animals();
-		a.read_Animals(p);
+		 Animals []p=a.read_Animals();
 		a.sort_Animals(p);
 		a.printReport(p);
 		}
@@ -41,6 +41,7 @@ public class Animals{
 	private boolean Mammel=false;
 	private int Npets=0;
 	
+	public Animals[] read_animals(){return null;}
 	void setName(String name) {this.name=name;}
 	void setYear(int year){this.year=year;}
 	void setBalance(int balance){this.balance=balance;}
@@ -65,7 +66,7 @@ public class Animals{
 	
 	//read data
 	
-	Animals[] read_animals(){
+	Animals[] read_Animals(){
 		try{
 			URL url=new URL("http://imc.kean.edu/CPS2231/program5.txt");
 			Scanner input=new Scanner(url.openStream());
