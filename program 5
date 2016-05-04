@@ -10,27 +10,6 @@ public class wintt_Program5 {
 		a.printReport(p);
 		}
 	
-	public void sort_animals(Animals[] p){
-		Animals pt=new Animals();
-		
-		for (int i=0; i<Npets; i++) {
-			for (int j=i+1; j<Npets; j++) {
-				if (p[i].balance > p[j].balance) {
-					pt.setName(p[i].getName());
-					p[i].setName(p[j].getName());
-					p[j].setName(pt.getName());
-					pt.balance=p[i].balance;
-					p[i].balance=p[j].balance;
-					p[j].balance=pt.balance;}
-//Swap all the stuff
-		}}
-
-}
-		void printReport(Animals[]p){
-			System.out.println("Owner: "+ p[i].getName()+ ", year: "+p[i].year+ ", price: "+
-		p[i].getBalance(), " , species"+p[i].getSpecies());
-		}
-
 public class Animals{
 	private String name;
 	private int year;
@@ -42,6 +21,29 @@ public class Animals{
 	private int Npets=0;
 	
 	public Animals[] read_animals(){return null;}
+	public void sort_Animals(Animals[] p) {
+		
+			Animals pt=new Animals();
+		
+			for (int i=0; i<Npets; i++) {
+				for (int j=i+1; j<Npets; j++) {
+					if (p[i].balance > p[j].balance) {
+						pt.setName(p[i].getName());
+						p[i].setName(p[j].getName());
+						p[j].setName(pt.getName());
+						pt.balance=p[i].balance;
+						p[i].balance=p[j].balance;
+						p[j].balance=pt.balance;}}}
+		
+	}
+	public void printReport(Animals[] p) {
+		for (int i=0; i<Npets; i++){
+		System.out.printf("Owner: "+ p[i].getName()+ ", year: "+p[i].year+ ", price: "+
+				p[i].getBalance(), " , species"+p[i].getSpecies());
+		System.out.println();
+		}
+		
+	}
 	void setName(String name) {this.name=name;}
 	void setYear(int year){this.year=year;}
 	void setBalance(int balance){this.balance=balance;}
@@ -66,7 +68,7 @@ public class Animals{
 	
 	//read data
 	
-	Animals[] read_Animals(){
+	public Animals[] read_Animals(){
 		try{
 			URL url=new URL("http://imc.kean.edu/CPS2231/program5.txt");
 			Scanner input=new Scanner(url.openStream());
