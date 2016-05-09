@@ -9,8 +9,8 @@ public class wintt_Program5 {
 		a.sort_Animals(p);
 		a.printReport(p);
 		}
-	
-public class Animals{
+}
+class Animals{
 	private String name;
 	private int year;
 	private double balance;
@@ -20,30 +20,6 @@ public class Animals{
 	private boolean Mammel=false;
 	private int Npets=0;
 	
-	public Animals[] read_animals(){return null;}
-	public void sort_Animals(Animals[] p) {
-		
-			Animals pt=new Animals();
-		
-			for (int i=0; i<Npets; i++) {
-				for (int j=i+1; j<Npets; j++) {
-					if (p[i].balance > p[j].balance) {
-						pt.setName(p[i].getName());
-						p[i].setName(p[j].getName());
-						p[j].setName(pt.getName());
-						pt.balance=p[i].balance;
-						p[i].balance=p[j].balance;
-						p[j].balance=pt.balance;}}}
-		
-	}
-	public void printReport(Animals[] p) {
-		for (int i=0; i<Npets; i++){
-		System.out.printf("Owner: "+ p[i].getName()+ ", year: "+p[i].year+ ", price: "+
-				p[i].getBalance(), " , species"+p[i].getSpecies());
-		System.out.println();
-		}
-		
-	}
 	void setName(String name) {this.name=name;}
 	void setYear(int year){this.year=year;}
 	void setBalance(int balance){this.balance=balance;}
@@ -61,6 +37,47 @@ public class Animals{
 	int getNlegs(){return Nlegs;}
 	String getBloodtype(){return bloodtype;}
 	boolean getMammel(){return Mammel;}
+	
+	public Animals[] read_animals(){return null;}
+	public void sort_Animals(Animals[] p) {
+		
+			Animals pt=new Animals();
+		
+			for (int i=0; i<Npets; i++) {
+				for (int j=i+1; j<Npets; j++) {
+					if (p[i].balance > p[j].balance) {
+						  	pt.setName(p[i].getName());
+		                    p[i].setName(p[j].getName());
+		                    p[j].setName(pt.getName());
+		                    pt.setYear(p[i].getYear());
+		                    p[i].setYear(p[j].getYear());
+		                    p[j].setYear(pt.getYear());
+		                    pt.balance=p[i].balance;
+		                    p[i].balance=p[j].balance;
+		                    p[j].balance=pt.balance;
+		                    pt.setSpecies(p[i].getSpecies());
+		                    p[i].setSpecies(p[j].getSpecies());
+		                    p[j].setSpecies(pt.getSpecies());
+		                    pt.setBloodtype(p[i].getBloodtype());
+		                    p[i].setBloodtype(p[j].getBloodtype());
+		                    p[j].setBloodtype(pt.getBloodtype());
+		                    pt.setNlegs(p[i].getNlegs());
+		                    p[i].setNlegs(p[j].getNlegs());
+		                    p[j].setNlegs(pt.getNlegs());
+		                    pt.setMammel(p[i].getMammel());
+		                    p[i].setMammel(p[j].getMammel());
+		                    p[j].setMammel(pt.getMammel());}}}
+		
+	}
+	public void printReport(Animals[] p) {
+		for (int i=0; i<Npets; i++){
+		System.out.printf("Owner: "+ p[i].getName()+ ", year: "+p[i].year+ ", price: "+
+				p[i].getBalance(), " , species"+p[i].getSpecies());
+		System.out.println();
+		}
+		
+	}
+
 	// constructor
 
 	
@@ -95,4 +112,4 @@ public class Animals{
 		catch(IOException e){e.printStackTrace();}
 		return null;
 		}
-	}}
+	}
