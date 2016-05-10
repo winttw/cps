@@ -103,12 +103,12 @@ class Animals{
 					p[i].Nlegs=input.nextInt();
 				p[i].Mammel=true;}
 					else
-						p[i].bloodtype=input.next();
+						p[i].bloodtype=input.next();}
 				
 			//	System.out.println(i+": "+p[i].name+ " :"+p[i].year+" :"+p[i].balance);
 			return p;	
 			
-		}}
+		}
 		catch(IOException e){e.printStackTrace();}
 		return null;
 		}
