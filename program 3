@@ -1,0 +1,70 @@
+import java.util.Date;
+import java.util.Scanner;
+public class wintt_Program3{
+	public static void main(String[] args){
+		Account a1=new Account();
+		//Account a2=new Account();
+		a1.readData();
+		a1.printReceipt();
+		//a2.readData();
+		//a2.printReciept();
+	}
+
+
+}
+
+class Account{
+	private String name;
+	private double balance;
+	private double annualInterestRate;
+	private Date dateCreated;
+	public double deposit;
+	
+	Account() {dateCreated=new Date();}
+	Account(String name, double newbalance) {
+		this.name=name;
+		balance=newbalance;
+		dateCreated=new Date();
+	}
+	String getName() {return name;}
+	
+	//**GETDATECREATED
+		Date getDateCreated() {return dateCreated;}
+	
+	void setName(String name) {this.name=name;}
+	
+	int getbalance() {return (int) balance;}
+	
+	//**GETSETBALANCE
+	void setBalance(int balance){this.balance=balance;}
+	
+	
+	
+	double getMonthlyInterestRate() {return annualInterestRate/12;}
+	
+	double getMontlyInterest() {return balance*getMonthlyInterestRate();}
+	void setDeposit(double money) { double m=money;}
+	void printReceipt(){
+		System.out.println("name"+name);
+		System.out.println("date"+dateCreated);
+		System.out.println("balance"+balance);
+		System.out.println("deposit"+deposit);
+		System.out.println("");
+	}
+	void readData(){
+		Scanner input=new Scanner(System.in);
+		
+
+	System.out.println("whats ur name, balance, withdrawel, deposit");
+		
+		name=input.next();
+		balance=input.nextDouble();
+		double rate=input.nextDouble();
+		double deposit=input.nextDouble();
+		
+		double withdraw=input.nextDouble();
+	
+		input.close();
+	}
+	
+}
